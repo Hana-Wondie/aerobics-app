@@ -1,0 +1,198 @@
+/* ================= SECTION ================= */
+
+.section {
+  padding: 80px 8%;
+
+  background: linear-gradient(
+    180deg,
+    #0b1220 0%,
+    #0f172a 50%,
+    #0b1220 100%
+  );
+
+  color: white;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ================= BACKGROUND GLOW ================= */
+
+.section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.2),
+    transparent 65%
+  );
+
+  top: -200px;
+  right: -200px;
+
+  filter: blur(45px);
+
+  z-index: 0;
+}
+
+/* ================= TITLE ================= */
+
+.section h2 {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 800;
+
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= INPUTS ================= */
+
+.section input,
+.section textarea {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: white;
+
+  outline: none;
+
+  font-size: 14px;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.3s ease;
+}
+
+.section textarea {
+  min-height: 140px;
+  resize: none;
+}
+
+.section input:focus,
+.section textarea:focus {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+/* placeholder */
+.section input::placeholder,
+.section textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ================= UPLOAD BOX ================= */
+
+.uploadBox {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 16px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+.uploadBox label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* file input */
+.uploadBox input[type="file"] {
+  background: transparent;
+  border: none;
+  color: white;
+}
+
+/* ================= BUTTON GROUP ================= */
+
+.btnGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 10px;
+}
+
+/* primary button */
+.btnGroup button {
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(16, 185, 129, 0.4);
+
+  background: rgba(16, 185, 129, 0.12);
+
+  color: #6ee7b7;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.btnGroup button:hover {
+  transform: translateY(-3px);
+
+  background: rgba(16, 185, 129, 0.2);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* secondary button */
+.secondaryBtn {
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+
+  background: rgba(255, 255, 255, 0.05) !important;
+
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.secondaryBtn:hover {
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 5%;
+  }
+
+  .btnGroup {
+    flex-direction: column;
+  }
+
+  .btnGroup button {
+    width: 100%;
+  }
+}

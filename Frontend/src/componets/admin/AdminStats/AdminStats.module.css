@@ -1,0 +1,179 @@
+/* ================= SECTION ================= */
+
+.section {
+  padding: 80px 8%;
+
+  background: linear-gradient(
+    180deg,
+    #0b1220 0%,
+    #0f172a 50%,
+    #0b1220 100%
+  );
+
+  color: white;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* ================= BACKGROUND GLOW ================= */
+
+.section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.18),
+    transparent 65%
+  );
+
+  top: -180px;
+  left: -180px;
+
+  filter: blur(45px);
+
+  z-index: 0;
+}
+
+/* ================= HEADER TEXT ================= */
+
+.title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+
+  text-align: center;
+
+  margin-bottom: 12px;
+
+  letter-spacing: -0.5px;
+
+  position: relative;
+  z-index: 2;
+}
+
+.subtitle {
+  text-align: center;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  margin-bottom: 50px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= GRID ================= */
+
+.grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 24px;
+
+  position: relative;
+  z-index: 2;
+}
+
+/* ================= CARD ================= */
+
+.card {
+  padding: 28px;
+
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(14px);
+
+  text-align: center;
+
+  transition: 0.3s ease;
+
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover glow effect */
+.card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(16, 185, 129, 0.15),
+    transparent 70%
+  );
+
+  opacity: 0;
+
+  transition: 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(16, 185, 129, 0.35);
+
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* ================= CARD TEXT ================= */
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 34px;
+  font-weight: 800;
+
+  color: #10b981;
+
+  letter-spacing: -1px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 70px 5%;
+  }
+
+  .card p {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    padding: 22px;
+  }
+}

@@ -1,0 +1,139 @@
+/* ================= PAGE WRAPPER ================= */
+
+.page {
+  padding: 100px 8%;
+  min-height: 90vh;
+
+  background: linear-gradient(
+    180deg,
+    #0b1220 0%,
+    #0f172a 50%,
+    #0b1220 100%
+  );
+
+  color: white;
+
+  position: relative;
+}
+
+/* ================= HEADER (MATCH HERO WIDTH STYLE) ================= */
+
+.header {
+  max-width: 850px;
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.header h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 800;
+
+  letter-spacing: -1px;
+  line-height: 1.2;
+
+  margin-bottom: 14px;
+}
+
+.header p {
+  font-size: 16px;
+  line-height: 1.8;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* ================= GRID (MATCH HERO BALANCE FEEL) ================= */
+
+.container {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 40px;
+
+  align-items: start;
+}
+
+/* ================= CARD (MATCH HERO CARD STYLE) ================= */
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 22px;
+
+  padding: 26px;
+
+  backdrop-filter: blur(14px);
+
+  transition: 0.3s ease;
+
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* ================= CARD TITLE ================= */
+
+.card h2 {
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #10b981;
+
+  margin-bottom: 18px;
+}
+
+/* ================= ROW ================= */
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  background: rgba(0, 0, 0, 0.25);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  margin-bottom: 10px;
+
+  transition: 0.3s ease;
+}
+
+.row:hover {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+/* ================= TEXT ================= */
+
+.day {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.time {
+  font-size: 13px;
+  color: #6ee7b7;
+  font-weight: 600;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    padding: 0 10px;
+  }
+}

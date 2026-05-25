@@ -1,0 +1,346 @@
+/* ================= MAIN LAYOUT ================= */
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background:
+    radial-gradient(circle at top left, rgba(16,185,129,0.15), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(59,130,246,0.12), transparent 30%),
+    #050816;
+
+  overflow: hidden;
+}
+
+/* ================= LEFT SIDE ================= */
+
+.left {
+  position: relative;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.7)),
+    url("https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px;
+}
+
+.overlay {
+  max-width: 520px;
+}
+
+.heroTitle {
+  font-size: 64px;
+  line-height: 1.05;
+  font-weight: 800;
+
+  color: white;
+
+  margin-bottom: 24px;
+
+  letter-spacing: -2px;
+}
+
+.heroText {
+  font-size: 18px;
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.82);
+}
+
+/* ================= RIGHT SIDE ================= */
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+}
+
+/* ================= LOGIN CARD ================= */
+
+.card {
+  width: 100%;
+  max-width: 460px;
+
+  padding: 42px;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.06);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+
+  position: relative;
+}
+
+.card::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: 30px;
+
+  padding: 1px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16,185,129,0.4),
+      rgba(59,130,246,0.2),
+      transparent
+    );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+
+  pointer-events: none;
+}
+
+/* ================= TEXT ================= */
+
+.title {
+  font-size: 38px;
+  font-weight: 800;
+
+  color: white;
+
+  margin-bottom: 10px;
+
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+
+  color: rgba(255,255,255,0.68);
+
+  font-size: 15px;
+
+  margin-bottom: 34px;
+
+  line-height: 1.7;
+}
+
+/* ================= ERROR ================= */
+
+.error {
+  background: rgba(239,68,68,0.12);
+
+  border: 1px solid rgba(239,68,68,0.35);
+
+  color: #fca5a5;
+
+  padding: 14px;
+
+  border-radius: 14px;
+
+  margin-bottom: 24px;
+
+  font-size: 14px;
+}
+
+/* ================= FORM ================= */
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+/* ================= INPUT GROUP ================= */
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.inputGroup label {
+  color: rgba(255,255,255,0.8);
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* ================= INPUT ================= */
+
+.input {
+  width: 100%;
+
+  padding: 16px 18px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(255,255,255,0.04);
+
+  color: white;
+
+  font-size: 15px;
+
+  transition: all 0.3s ease;
+
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+
+.input:focus {
+  border-color: #10b981;
+
+  background: rgba(255,255,255,0.06);
+
+  box-shadow:
+    0 0 0 4px rgba(16,185,129,0.12),
+    0 10px 25px rgba(16,185,129,0.08);
+}
+
+/* ================= BUTTON ================= */
+
+.button {
+  margin-top: 10px;
+
+  height: 56px;
+
+  border: none;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #10b981,
+      #059669
+    );
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  box-shadow:
+    0 15px 30px rgba(16,185,129,0.25);
+}
+
+.button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 20px 40px rgba(16,185,129,0.35);
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ================= BOTTOM TEXT ================= */
+
+.bottomText {
+  text-align: center;
+
+  margin-top: 28px;
+
+  color: rgba(255,255,255,0.65);
+
+  font-size: 14px;
+}
+
+.bottomText span {
+  color: #10b981;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.bottomText span:hover {
+  color: #34d399;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+  .heroTitle {
+    font-size: 52px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    min-height: 340px;
+  }
+
+  .heroTitle {
+    font-size: 46px;
+  }
+
+  .heroText {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .left {
+    padding: 30px;
+    min-height: 280px;
+  }
+
+  .right {
+    padding: 20px;
+  }
+
+  .card {
+    padding: 28px;
+    border-radius: 24px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+  }
+
+  .input {
+    padding: 14px 16px;
+  }
+
+  .button {
+    height: 52px;
+  }
+}

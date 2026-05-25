@@ -1,0 +1,307 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+
+  background: rgba(2, 6, 23, 0.72);
+  backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  max-width: 1400px;
+  margin: auto;
+
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 32px;
+}
+
+/* ================= LOGO ================= */
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  text-decoration: none;
+}
+
+.logoWrapper {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 14px;
+
+  background: rgba(16, 185, 129, 0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(16, 185, 129, 0.25);
+
+  transition: 0.3s ease;
+}
+
+.logoWrapper:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.logoText {
+  font-size: 28px;
+  font-weight: 800;
+
+  color: white;
+
+  letter-spacing: 0.5px;
+}
+
+.logoText span {
+  color: #10b981;
+}
+
+/* ================= NAV ================= */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navLink {
+  background: transparent;
+  border: none;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  transition: all 0.25s ease;
+}
+
+.navLink:hover {
+  color: white;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ================= AUTH ================= */
+.authSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* LOGIN */
+.loginBtn {
+  text-decoration: none;
+
+  color: white;
+
+  padding: 11px 18px;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.loginBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* JOIN */
+.joinBtn {
+  text-decoration: none;
+
+  background: linear-gradient(
+    135deg,
+    #10b981,
+    #059669
+  );
+
+  color: white;
+
+  padding: 12px 22px;
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: all 0.3s ease;
+
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.28);
+}
+
+.joinBtn:hover {
+  transform: translateY(-2px);
+
+  background: linear-gradient(
+    135deg,
+    #059669,
+    #047857
+  );
+}
+
+/* ================= USER ================= */
+.welcome {
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.logoutBtn {
+  border: none;
+
+  background: rgba(239, 68, 68, 0.14);
+  color: #ef4444;
+
+  padding: 11px 18px;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.logoutBtn:hover {
+  background: #ef4444;
+  color: white;
+}
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+
+  flex-direction: column;
+  gap: 5px;
+
+  background: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+
+  border-radius: 20px;
+
+  background: white;
+
+  transition: 0.3s ease;
+}
+
+/* ANIMATION */
+.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(11px);
+}
+
+.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-11px);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 992px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav,
+  .authSection {
+    position: absolute;
+    left: 0;
+
+    width: 100%;
+
+    background: rgba(2, 6, 23, 0.97);
+    backdrop-filter: blur(16px);
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 20px 28px;
+
+    gap: 16px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition: 0.3s ease;
+  }
+
+  .nav {
+    top: 80px;
+  }
+
+  .authSection {
+    top: 430px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav.active,
+  .authSection.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+  .navLink,
+  .loginBtn,
+  .joinBtn,
+  .logoutBtn {
+    width: 100%;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logoText {
+    font-size: 22px;
+  }
+
+  .logoWrapper {
+    width: 46px;
+    height: 46px;
+  }
+
+  .logoIcon {
+    width: 34px;
+    height: 34px;
+  }
+}
